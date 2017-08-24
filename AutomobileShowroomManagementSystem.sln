@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreSystem", "CoreSystem\CoreSystem.csproj", "{92969DBB-F3A9-40C1-8945-74F1269ED43B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASMSFixture", "ASMSFixture\ASMSFixture.csproj", "{6915D9F9-0174-4586-98A3-BA187BF4D73D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92969DBB-F3A9-40C1-8945-74F1269ED43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92969DBB-F3A9-40C1-8945-74F1269ED43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92969DBB-F3A9-40C1-8945-74F1269ED43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92969DBB-F3A9-40C1-8945-74F1269ED43B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6915D9F9-0174-4586-98A3-BA187BF4D73D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6915D9F9-0174-4586-98A3-BA187BF4D73D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6915D9F9-0174-4586-98A3-BA187BF4D73D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6915D9F9-0174-4586-98A3-BA187BF4D73D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
