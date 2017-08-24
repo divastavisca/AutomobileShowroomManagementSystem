@@ -18,7 +18,7 @@ namespace CoreSystem
         public double GetServiceFees()
         {
             double value = 0;
-            _sellingManager.TryRequestPrice(_brand, _modelSeries, _modelId,out value);
+            _sellingManager.TryRequestPrice(_brand, _modelSeries, _modelId, out value);
             return value;
         }
 
@@ -27,17 +27,17 @@ namespace CoreSystem
             return _sellingManager.IsAvailable(_brand, _modelSeries, _modelId);
         }
 
-        public Automobile PerformService()
+        public Automobile PerformService(out Invoice userReciept)
         {
             Automobile customerRequirement = null;
             double value;
             _sellingManager.TryRequestPrice(_brand, _modelSeries, _modelId, out value);
-            _salesManager.NewSale(value);
+            userReciept = _salesManager.NewSale(value);
             _sellingManager.TryGetAutomobile(_brand, _modelSeries, _modelId, out customerRequirement);
             return customerRequirement;
         }
 
-        public SellingServiceIncharge(string brand,string modelSeries,string modelId,SellingAutomobileManager concernedManager,SalesManager salesManager)
+        public SellingServiceIncharge(string brand, string modelSeries, string modelId, SellingAutomobileManager concernedManager, SalesManager salesManager)
         {
             _brand = brand;
             _modelSeries = modelSeries;

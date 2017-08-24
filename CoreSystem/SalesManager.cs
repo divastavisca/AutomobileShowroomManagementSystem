@@ -15,12 +15,13 @@ namespace CoreSystem
             return _salesRecord[DateTime.Today.Date];
         }
 
-        public void NewSale(double price)
+        public Invoice NewSale(double price)
         {
             double roadPrice = price + additionalCost(price);
             if (_salesRecord.ContainsKey(DateTime.Today.Date))
                 _salesRecord[DateTime.Today.Date] += roadPrice;
             else _salesRecord.Add(DateTime.Today.Date, roadPrice);
+            return new Invoice(getNewInvoiceId(), roadPrice);
         }
 
         private double additionalCost(double price)
@@ -28,6 +29,11 @@ namespace CoreSystem
             return price * 0.08;
         }
 
+
+        private string getNewInvoiceId()
+        {
+            return null;
+        }
         public SalesManager()
         {
             _salesRecord = new Dictionary<DateTime, double>();

@@ -27,17 +27,17 @@ namespace CoreSystem
             return _rentingManager.IsAvailable(_brand, _modelSeries, _modelId);
         }
 
-        public Automobile PerformService()
+        public Automobile PerformService(out Invoice userReciept)
         {
             Automobile customerRequirement = null;
             double value;
             _rentingManager.TryRequestPrice(_brand, _modelSeries, _modelId, out value);
-            _salesManager.NewSale(value);
+            userReciept = _salesManager.NewSale(value);
             _rentingManager.TryGetAutomobile(_brand, _modelSeries, _modelId, out customerRequirement);
             return customerRequirement;
         }
 
-        public RentingServiceIncharge(string brand, string modelSeries, string modelId, RentingAutomobileManager concernedManager,SalesManager salesManager)
+        public RentingServiceIncharge(string brand, string modelSeries, string modelId, RentingAutomobileManager concernedManager, SalesManager salesManager)
         {
             _brand = brand;
             _modelSeries = modelSeries;

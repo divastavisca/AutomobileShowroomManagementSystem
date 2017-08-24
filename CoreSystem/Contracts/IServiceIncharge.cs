@@ -9,7 +9,7 @@ namespace CoreSystem.Contracts
     public interface IServiceIncharge
     {
         bool IsAvailable();
-        Automobile PerformService();
+        Automobile PerformService(out Invoice reciept);
         double GetServiceFees();
     }
 }
