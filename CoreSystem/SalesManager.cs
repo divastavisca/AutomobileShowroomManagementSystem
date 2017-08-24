@@ -12,15 +12,15 @@ namespace CoreSystem
 
         public double GetTodaysSale()
         {
-            return _salesRecord[DateTime.Today];
+            return _salesRecord[DateTime.Today.Date];
         }
 
         public void NewSale(double price)
         {
             double roadPrice = price + additionalCost(price);
-            if (_salesRecord.ContainsKey(DateTime.Today))
-                _salesRecord[DateTime.Today] += roadPrice;
-            else _salesRecord.Add(DateTime.Today, roadPrice);
+            if (_salesRecord.ContainsKey(DateTime.Today.Date))
+                _salesRecord[DateTime.Today.Date] += roadPrice;
+            else _salesRecord.Add(DateTime.Today.Date, roadPrice);
         }
 
         private double additionalCost(double price)
