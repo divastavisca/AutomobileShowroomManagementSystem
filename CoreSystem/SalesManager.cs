@@ -18,12 +18,17 @@ namespace CoreSystem
         public void NewSale(double price)
         {
             double roadPrice = price + additionalCost(price);
-
+            _salesRecord[DateTime.Now] += roadPrice;
         }
 
         private double additionalCost(double price)
         {
             return price * 0.08;
+        }
+
+        public SalesManager()
+        {
+            _salesRecord = new Dictionary<DateTime, double>();
         }
     }
 }

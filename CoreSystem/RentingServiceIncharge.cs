@@ -10,6 +10,7 @@ namespace CoreSystem
     public class RentingServiceIncharge : IServiceIncharge
     {
         private IAutomobileManager _rentingManager;
+        private SalesManager _salesManager;
         private string _brand;
         private string _modelSeries;
         private string _modelId;
@@ -29,16 +30,20 @@ namespace CoreSystem
         public Automobile PerformService()
         {
             Automobile customerRequirement = null;
+            double value;
+            _rentingManager.TryRequestPrice(_brand, _modelSeries, _modelId, out value);
+            _salesManager.NewSale(value);
             _rentingManager.TryGetAutomobile(_brand, _modelSeries, _modelId, out customerRequirement);
             return customerRequirement;
         }
 
-        public RentingServiceIncharge(string brand, string modelSeries, string modelId, RentingAutomobileManager concernedManager)
+        public RentingServiceIncharge(string brand, string modelSeries, string modelId, RentingAutomobileManager concernedManager,SalesManager salesManager)
         {
             _brand = brand;
             _modelSeries = modelSeries;
             _modelId = modelId;
             _rentingManager = concernedManager;
+            _salesManager = salesManager;
         }
     }
 }
